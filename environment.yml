@@ -1,0 +1,14 @@
+name: vdbg_dashboard
+channels:
+  - conda-forge
+dependencies:
+  - black
+  - geopandas
+  - matplotlib
+  - pandas
+  - plotly
+  - pre-commit
+  - streamlit
+  
+
+
