@@ -1,8 +1,8 @@
 import pandas as pd
 import plotly
 import plotly.express as px
-import plotly.graph_objects as go
 import plotly.graph_objects
+import plotly.graph_objects as go
 import streamlit as st
 from matplotlib import pyplot as plt
 
@@ -11,7 +11,6 @@ from functions.scores_and_tables import (
     age_tables,
     answers_by_state,
     frequency_violence,
-    incidence_table_by_violence_name,
     kinship_identification_violences,
     kinship_violences,
     knowledge_violences,
@@ -297,9 +296,10 @@ def temporality_graph(
     else:
         color = {"Sí": "rgb(149, 27, 129)", "No": "rgb(57, 105, 172)"}
     if len(temp_tbl) <= 1:
+        # TODO Review temp_tbl.index[0].lower()
         st.write(
             "Las personas que sufrieron de {}, manifiestan que {} ocurrió durante los últimos 6 meses".format(
-                title.casefold(temp_tbl.index[0].lower())
+                title.casefold(temp_tbl.index[0].lower()), temp_tbl.index[0].lower()
             )
         )
     else:

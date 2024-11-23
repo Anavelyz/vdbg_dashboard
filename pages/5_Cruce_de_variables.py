@@ -4,9 +4,7 @@ from functions.data_functions import get_data
 from functions.graphs import (
     age_violence_graph,
     frequency_all_violence_graph,
-    frequency_violence_graph,
     identification_aggressor_violence_graph,
-    incidence_of_violence,
     kinship_violence_graph,
     knowledge_violences_names_graph,
     location_violence_graph,
@@ -17,14 +15,8 @@ from functions.graphs import (
     sex_violence_graph,
     social_media_violences_graph,
 )
-from functions.scores_and_tables import (
-    incidence_table_by_violence_name,
-    kinship_identification_violences,
-    location_violence,
-    occupations_violences,
-    process_age_ranges,
-    sex_aggressor_violence,
-)
+from functions.scores_and_tables import process_age_ranges
+
 from functions.widgets import select_period_sex, violence_selection
 
 st.set_page_config(

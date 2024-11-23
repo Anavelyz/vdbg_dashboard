@@ -1,6 +1,6 @@
 import os
-import pandas as pd
 
+import pandas as pd
 
 from functions.constants_values import (
     AGE_CATEGORIES,

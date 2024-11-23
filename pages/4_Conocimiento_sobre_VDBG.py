@@ -1,10 +1,5 @@
-import geopandas as gpd
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
 
-import funciones_graficos as fg
 from functions.data_functions import get_data
 from functions.graphs import knowledge_violence_graph, violence_term_graph
 from functions.scores_and_tables import quantile_for_number_violences

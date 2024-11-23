@@ -4,9 +4,9 @@ channels:
 dependencies:
   - black
   - geopandas
+  - isort
   - matplotlib
   - pandas
   - plotly
   - pre-commit
   - streamlit
-

@@ -1,11 +1,5 @@
-import geopandas as gpd
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
 
-import funciones_graficos as fg
-from functions.constants_values import KEY_VIOLENCE_NAMES
 from functions.data_functions import get_data
 from functions.graphs import (
     age_graph,

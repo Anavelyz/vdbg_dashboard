@@ -425,8 +425,6 @@ def occupations_violences(occupation_violence_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def location_violence(df: pd.DataFrame) -> pd.DataFrame:
-    import streamlit as st
-
     keys = []
     dfs = []
     for violence in VIOLENCES:

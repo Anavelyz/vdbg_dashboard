@@ -1,12 +1,5 @@
-import geopandas as gpd
-import matplotlib.pyplot as plt
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
-from shapely.geometry import Point
 
-import funciones_graficos as fg
 from functions.data_functions import get_data
 from functions.graphs import ages_graph, gender_sex_graph, map_graph, occupation_graph
 from functions.widgets import select_period_sex

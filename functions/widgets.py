@@ -43,7 +43,7 @@ def violence_selection(index=None):
         index=None,
         key="tipo_violencia",
     )
-    if title != None:
+    if title is not None:
         selected_violence = KEY_VIOLENCE_NAMES[title]
     else:
         selected_violence = None
