@@ -25,10 +25,10 @@ st.write("# Uso de internet y redes sociales")
 col1, col2 = st.columns(2)
 
 with col1:
-    #st.write("## Uso de internet luego de Covid-19")
+    # st.write("## Uso de internet luego de Covid-19")
     with st.container(border=True):
         growth_internet_use(data)
 with col2:
-    #st.write("## Uso de redes sociales/aplicaciones")
+    # st.write("## Uso de redes sociales/aplicaciones")
     with st.container(border=True):
         graph_social_media_use(data)

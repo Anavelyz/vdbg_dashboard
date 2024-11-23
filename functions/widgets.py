@@ -21,7 +21,7 @@ def select_period_sex():
         default=st.session_state.get("period"),
         placeholder="Selecciona un año",
         key="selected_period",
-        on_change=update_selections
+        on_change=update_selections,
     )
 
     sex = st.sidebar.multiselect(
@@ -30,10 +30,11 @@ def select_period_sex():
         default=st.session_state.get("sex"),
         placeholder="Selecciona una opción",
         key="selected_sex",
-        on_change=update_selections
+        on_change=update_selections,
     )
 
     return period, sex
+
 
 def violence_selection(index=None):
     title = st.selectbox(

@@ -25,18 +25,18 @@ st.write("# Datos demográficos")
 col1, col2 = st.columns(2)
 
 with col1:
-    #st.write("## Sexo y género")
+    # st.write("## Sexo y género")
     with st.container(border=True):
         gender_sex_graph(data)
-    #st.write("## Ubicación")
+    # st.write("## Ubicación")
     with st.container(border=True):
         map_graph(data)
 
 with col2:
-    #st.write("## Edades")
+    # st.write("## Edades")
     with st.container(border=True):
         ages_graph(data, sex)
 
-    #st.write("## Ocupación")
+    # st.write("## Ocupación")
     with st.container(border=True):
         occupation_graph(data, sex)

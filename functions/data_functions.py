@@ -67,7 +67,7 @@ def get_data(
             )
 
         df.to_pickle("data/clean_data.pkl")
-    
+
     # Filter by period (if necessary)
     if len(period) == 1:
         df = df.query("YEAR <= @period[0]")

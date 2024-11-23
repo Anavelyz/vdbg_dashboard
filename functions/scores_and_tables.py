@@ -208,29 +208,35 @@ def social_media_violences(data: pd.DataFrame) -> pd.DataFrame:
         )
         if df_violence.empty:
             continue
-        cols = [s for s in df_violence.columns if any(s.startswith(n) for n in SOCIAL_MEDIA_NAMES.keys())]
+        cols = [
+            s
+            for s in df_violence.columns
+            if any(s.startswith(n) for n in SOCIAL_MEDIA_NAMES.keys())
+        ]
         cols = cols[:-1]
         df = df_violence[cols].sum()
-        df.index = [SOCIAL_MEDIA_NAMES[medio.split("_")[0]] for medio in df.index.values]
+        df.index = [
+            SOCIAL_MEDIA_NAMES[medio.split("_")[0]] for medio in df.index.values
+        ]
         df = df / df_violence.iloc[:, 0].sum() * 100
         df.name = VIOLENCE_NAMES_DICT[violence]
         dfs.append(df)
 
     social_media_violences = (
-            pd.concat(dfs, axis=1)
-            .melt(
-                ignore_index=False,
-            )
-            .reset_index()
+        pd.concat(dfs, axis=1)
+        .melt(
+            ignore_index=False,
         )
+        .reset_index()
+    )
     social_media_violences.rename(
-            columns={
-                "index": "Medio",
-                "variable": "Violencia",
-                "value": "Porcentaje",
-            },
-            inplace=True,
-        )
+        columns={
+            "index": "Medio",
+            "variable": "Violencia",
+            "value": "Porcentaje",
+        },
+        inplace=True,
+    )
     return round(social_media_violences.fillna(0), 2)
 
 
@@ -375,7 +381,6 @@ def sex_aggressor_violence(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def sex_kinship_by_violence(df: pd.DataFrame, selected_violence: str) -> pd.DataFrame:
-
     df_violence = incidence_table_by_violence_name(df, selected_violence)
     cols = [
         s
@@ -516,8 +521,6 @@ def knowledge_violences_names(df: pd.DataFrame) -> pd.DataFrame:
             .round(2)
         )
         dfs.append(info_violence)
-    tbl_ = pd.concat(
-        dfs, keys=keys, names=["Violencia", "Conocimiento"]
-    )
+    tbl_ = pd.concat(dfs, keys=keys, names=["Violencia", "Conocimiento"])
     tbl_ = tbl_.reset_index().rename(columns={"proportion": "Porcentaje"})
     return tbl_

@@ -77,7 +77,5 @@ with st.container(border=True):
     st.warning(
         """
         **{}** (**{}%**) y/o **{}** (**{}%**).
-        """.format(
-            r1, v1, r2.casefold(), v2
-        )
+        """.format(r1, v1, r2.casefold(), v2)
     )

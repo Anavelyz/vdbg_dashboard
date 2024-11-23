@@ -145,9 +145,11 @@ def ages_graph(df: pd.DataFrame, sex: list) -> plotly.graph_objects.Figure:
 def map_graph(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     df_map = answers_by_state(df)
     fig, ax = plt.subplots(1, 1)
-    ax.set_title('Ubicación', 
-                 fontdict={'fontsize':10, 'fontweight' :"bold"}, 
-                 loc='left')
+    ax.set_title(
+        "Ubicación",
+        fontdict={"fontsize": 10, "fontweight": "bold"},
+        loc="left",
+    )
     df_map.plot(
         "Personas",
         ax=ax,
@@ -419,7 +421,6 @@ def kinship_graph(
             "phishing",
             "mobbing",
         ]:
-
             if sex == ["Mujer"]:
                 yaxis = "las mujeres"
                 color = "rgb(57, 105, 172)"
